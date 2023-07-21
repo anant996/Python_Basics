@@ -1,0 +1,184 @@
+#Exercise 1: Calculate the multiplication and sum of two numbers
+def solve(n1,n2):
+    prod=n1*n2
+    if prod<=1000:
+        return prod
+    else:
+        return n1+n2
+    
+result=solve(20, 30)
+print("The result is", result)
+
+#Exercise 2: Print the sum of the current number and the previous number
+print("Printing current and previous number and their sum in a range(10)")
+prev=0
+for i in range(0, 10):
+    sum=prev+i
+    print("Current Number", i, "Previous Number ", prev, " Sum: ", sum)
+    prev=i
+
+val=input("Enter val")
+print(val)
+
+size=len(val)
+
+
+#Exercise 3: Print characters from a string that are present at an even index number
+val=input("Enter val ")
+print("Original Stirng is ",val)
+print("Printing only even index chars")
+for i in range(len(val)):
+    if(i%2==0):
+        print(val[i])
+
+print(val)
+
+#Exercise 4: Remove first n characters from a string 
+n=int(input("Enter n "))
+str=""
+for i in range(n,len(val)):
+    str+=val[i]
+print(str)
+
+#Exercise 5: Check if the first and last number of a list is the same
+
+def check(lst):
+    length=len(lst)
+    if lst[0]==lst[length-1]:
+        return True
+    return False
+
+numbers_x = [10, 20, 30, 40, 10]
+numbers_y = [75, 65, 35, 75, 30]
+print("numbers_x ",numbers_x)
+print("result is ",check(numbers_x))
+print("numbers_y ",numbers_y)
+print("result is ",check(numbers_y))
+
+#Exercise 6: Display numbers divisible by 5 from a list
+lst=[10, 20, 33, 46, 55]
+print("Divisible by 5")
+for i in range(0,len(lst)):
+    if lst[i]%5==0:
+        print(lst[i])
+
+#Exercise 7: Return the count of a given substring from a string
+str_x = "Emma is good developer. Emma is a writer"
+print("Emma appeared",str_x.count("Emma"),"times")
+
+#Exercise 8: Print the following pattern
+# 1 
+# 2 2 
+# 3 3 3 
+# 4 4 4 4 
+# 5 5 5 5 5
+n = int(input("Enter n : "))
+for i in range(n):
+    for j in range(i):
+        print(i,end=" ")
+    print("\n")
+
+
+
+#Exercise 9: Check Palindrome Number
+def reverse_num(n):
+        rev = 0
+        while n != 0:
+            digit = n % 10
+            rev = rev * 10 + digit
+            n//=10
+        return rev
+
+n=int(input("Enter num "))
+rev_num=reverse_num(n)
+if rev_num==n:
+    print("Yes. given number is palindrome number")
+else :
+    print("No. given number is not palindrome number")
+
+
+#Exercise 10: Create a new list from a two list using the following condition
+list1 = [10, 20, 25, 30, 35]
+list2 = [40, 45, 60, 75, 90]
+new_lst=[]
+for i in range(len(list1)):
+    if list1[i]%2!=0:
+        new_lst.append(list1[i])
+for i in range(len(list2)):
+    if list2[i]%2==0:
+        new_lst.append(list2[i])
+print(new_lst)
+
+#Exercise 11: Write a Program to extract each digit from an integer in the reverse order
+n=int(input("Enter num "))
+rev = 0
+while n!=0:
+    digit = n % 10
+    rev = rev * 10 + digit
+    n//=10
+    print(digit,end=" ")
+    
+
+#Exercise 12: Calculate income tax for the given income by adhering to the below rules
+income=int(input())
+taxx=0
+if income<=10000:
+    taxx=0
+elif income<=20000:
+    taxx=(income-10000)*10/100
+else:
+    taxx=(10000*10/100)+(income-20000)*20/100
+
+print(taxx)
+
+
+#Exercise 13: Print multiplication table form 1 to 10
+for i in range(1,11):
+    for j in range(1,11):
+        print(i*j,end=" ")
+    print("\n")
+1 2 3 4 5 6 7 8 9 10 
+
+2 4 6 8 10 12 14 16 18 20 
+
+3 6 9 12 15 18 21 24 27 30 
+
+4 8 12 16 20 24 28 32 36 40 
+
+5 10 15 20 25 30 35 40 45 50 
+
+6 12 18 24 30 36 42 48 54 60 
+
+7 14 21 28 35 42 49 56 63 70 
+
+8 16 24 32 40 48 56 64 72 80 
+
+9 18 27 36 45 54 63 72 81 90 
+
+10 20 30 40 50 60 70 80 90 100 
+
+
+#Exercise 14: Print downward Half-Pyramid Pattern with Star (asterisk)
+n=int(input())
+for i in range(n, 0, -1):
+        for j in range(0, i):
+            print('*', end='')
+        print('')
+5
+*****
+****
+***
+**
+*
+
+#Exercise 15: Write a function called exponent(base, exp) that returns an int value of base raises to the power of exp.
+def exponent(base, exp):
+    result = 1  
+    for i in range(exp):
+        result *= base
+
+    return result
+
+base = 5
+exp = 4
+print(exponent(base, exp))
